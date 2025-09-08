@@ -10,10 +10,10 @@ from langchain_community.embeddings import ModelScopeEmbeddings     #！！！�
 from sympy.physics.units import temperature
 from langchain_openai import AzureChatOpenAI
 
-os.environ["OPENAI_API_KEY"] = "50a857aec1164241a3411b5e38e99982"  # 你的 API Key
-os.environ["AZURE_OPENAI_ENDPOINT"] = "https://genai-jp.openai.azure.com"  # 你的 Azure 实例域名
+os.environ["OPENAI_API_KEY"] = ""  # 你的 API Key
+os.environ["AZURE_OPENAI_ENDPOINT"] = ""  # 你的 Azure 实例域名
 os.environ["OPENAI_API_TYPE"] = "azure"  # 指定使用 Azure 服务
-os.environ["OPENAI_API_VERSION"] = "2024-02-15-preview"  # API 版本
+os.environ["OPENAI_API_VERSION"] = ""  # API 版本
 
 
 DB_DIR = 'faiss_db/'
@@ -77,4 +77,5 @@ if __name__ == '__main__':
     chain = init_chain()
     res = chain.invoke({'input':'房子附近有什么设施？'})
     print(res)   #大模型会得到相似度大于0.7的答案，比如会有x个答案，然后大模型会把x个答案最终汇总成answer
+
     print(res['answer'])
