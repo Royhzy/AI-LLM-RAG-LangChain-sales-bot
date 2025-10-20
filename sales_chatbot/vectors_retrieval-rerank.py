@@ -13,7 +13,7 @@ from langchain_community.embeddings import ModelScopeEmbeddings
 from langchain.docstore.document import Document
 
 # 设置环境变量
-os.environ["OPENAI_API_KEY"] = "50a857aec1164241a3411b5e38e99982"
+os.environ["OPENAI_API_KEY"] = ""
 os.environ["AZURE_OPENAI_ENDPOINT"] = "https://genai-jp.openai.azure.com"
 os.environ["OPENAI_API_TYPE"] = "azure"
 os.environ["OPENAI_API_VERSION"] = "2024-02-15-preview"
@@ -227,4 +227,5 @@ if __name__ == '__main__':
         for question in test_questions:
             res = chain.invoke({'input': question})
             print(f"\n问题: {question}")
+
             print(f"回答: {res['answer']}")
